@@ -15,9 +15,13 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>Contact page for my awesome site!</h1><p>Get in touch by emailing me at <a href=\"mailto:ian@ian.com\">my email address</a>.</p>")
 }
 
+func pathHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, r.URL.Path)
+}
+
 func main() {
-	http.HandleFunc("/", homeHandler)
-	http.HandleFunc("/contact/", contactHandler)
+	http.HandleFunc("/", pathHandler)
+	// http.HandleFunc("/contact/", contactHandler)
 	fmt.Println("Starting the server on :3000...")
 	http.ListenAndServe(":3000", nil)
 }
