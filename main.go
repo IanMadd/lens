@@ -24,7 +24,6 @@ func pathHandler(w http.ResponseWriter, r *http.Request) {
 	default:
 		// TODO: handle page not found error
 	}
-	fmt.Fprint(w, r.URL.Path)
 }
 
 func main() {
