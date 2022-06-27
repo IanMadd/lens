@@ -31,3 +31,35 @@ The problem is that the forward slash `/` is encoded as `%2F`, so if the path is
 
 See https://meyerweb.com/eric/tools/dencoder/ to encode and decode paths (and other things).
 
+## CH 2 Not Found
+
+Handle page not found using status codes.
+
+One method:
+
+```go
+	default:
+		w.WriteHeader(http.StatusNotFound)
+		fmt.Fprint(w, "Page Not Found")
+```
+
+This will return a status code of 404.
+
+The `http.ResponseWriter.WriteHeader` takes an integer for a status code. `http.StatusNotFound` returns [`404`](https://pkg.go.dev/net/http#StatusNotFound).
+
+Alternatively, there's:
+
+```go
+  http.Error(w, "Page Not Found.", http.StatusNotFound)
+```
+
+which handles the same content on one line.
+
+There's also,
+
+```go
+  http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
+```
+
+The [`http.StatusText()`](https://pkg.go.dev/net/http#StatusText) just returns the text associated with a particular status code.
+

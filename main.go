@@ -8,6 +8,7 @@ import (
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	fmt.Fprint(w, "<h1>Welcome to my awesome site!</h1>")
+	fmt.Println(r.URL)
 }
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
@@ -22,7 +23,7 @@ func pathHandler(w http.ResponseWriter, r *http.Request) {
 	case "/contact":
 		contactHandler(w, r)
 	default:
-		// TODO: handle page not found error
+		http.Error(w, "Page Not Found.", http.StatusNotFound)
 	}
 }
 
