@@ -1,5 +1,7 @@
 # lens
 
+<!-- markdownlint-disable MD010 -->
+
 ## CH 2 modd
 
 Modd will rebuild the site and local server when changes are made to specified files.
@@ -62,4 +64,36 @@ There's also,
 ```
 
 The [`http.StatusText()`](https://pkg.go.dev/net/http#StatusText) just returns the text associated with a particular status code.
+
+## CH2 http.Handler Type
+
+The [`http.ListenAndServe`](https://pkg.go.dev/net/http#ListenAndServe) function accepts two parameters, the address and handler. If the handler is set to `nil` (which it often is) then the [`DefaultServeMux`](https://pkg.go.dev/net/http?utm_source=godoc#DefaultServeMux) is used automatically.
+
+So,
+
+```go
+http.ListenAndServe(":3000", nil)
+```
+
+and
+
+```go
+http.ListenAndServe(":3000", http.DefaultServeMux)
+```
+
+are equivalent.
+
+`http.ListenAndServe` is a function that accepts the address of type String (`addr`) and a handler of type [Handler](https://pkg.go.dev/net/http#Handler).
+
+The Handler type in an interface with a `ServeHTTP` method that takes a response writer and request:
+
+```go
+type Handler interface {
+	ServeHTTP(ResponseWriter, *Request)
+}
+```
+
+This creates a new type called Router which is a struct. The router type gets a ServeHTTP method that handles routing traffic to different pages.
+
+Then the router is passed into the `handler` parameter for `ListenAndServe`.
 

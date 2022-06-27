@@ -8,7 +8,6 @@ import (
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	fmt.Fprint(w, "<h1>Welcome to my awesome site!</h1>")
-	fmt.Println(r.URL)
 }
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
@@ -16,11 +15,14 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "<h1>Contact page for my awesome site!</h1><p>Get in touch by emailing me at <a href=\"mailto:ian@ian.com\">my email address</a>.</p>")
 }
 
-func pathHandler(w http.ResponseWriter, r *http.Request) {
+type Router struct{}
+
+// Add ServeHTTP method to Router type
+func (router Router) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	switch r.URL.Path {
 	case "/":
 		homeHandler(w, r)
-	case "/contact":
+	case "/contact/":
 		contactHandler(w, r)
 	default:
 		http.Error(w, "Page Not Found.", http.StatusNotFound)
@@ -28,8 +30,7 @@ func pathHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", pathHandler)
-	// http.HandleFunc("/contact/", contactHandler)
+	var router Router
 	fmt.Println("Starting the server on :3000...")
-	http.ListenAndServe(":3000", nil)
+	http.ListenAndServe(":3000", router)
 }
