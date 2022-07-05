@@ -106,3 +106,7 @@ In this example, we can replace the Router type with a variable "router" with a 
 - [http.Handle](https://pkg.go.dev/net/http#Handle) is a function that takes in a pattern (e.g. "/contact") and an http.Handler.
 - [http.Handler](https://pkg.go.dev/net/http#Handler) is a type that is an interface with the [ServeHTTP](https://pkg.go.dev/net/http#HandlerFunc.ServeHTTP) method.
 - [http.HandlerFunc](https://pkg.go.dev/net/http#HandlerFunc) is a function type that accepts the same args as the ServeHTTP method and also implements http.Handler
+
+## CH 2 Handler Conversions
+
+Things happened. Story over. Moving back to Router type.
