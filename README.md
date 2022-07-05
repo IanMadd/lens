@@ -65,7 +65,7 @@ There's also,
 
 The [`http.StatusText()`](https://pkg.go.dev/net/http#StatusText) just returns the text associated with a particular status code.
 
-## CH2 http.Handler Type
+## CH 2 http.Handler Type
 
 The [`http.ListenAndServe`](https://pkg.go.dev/net/http#ListenAndServe) function accepts two parameters, the address and handler. If the handler is set to `nil` (which it often is) then the [`DefaultServeMux`](https://pkg.go.dev/net/http?utm_source=godoc#DefaultServeMux) is used automatically.
 
@@ -97,3 +97,12 @@ This creates a new type called Router which is a struct. The router type gets a 
 
 Then the router is passed into the `handler` parameter for `ListenAndServe`.
 
+## Ch 2 http.HandlerFunc Type
+
+You can't just pass a router function to http.ListenAndServe. This example accepts a struct with ServeHTTP method.
+
+In this example, we can replace the Router type with a variable "router" with a type of HandlerFunc and a pathHandler function method.
+
+- [http.Handle](https://pkg.go.dev/net/http#Handle) is a function that takes in a pattern (e.g. "/contact") and an http.Handler.
+- [http.Handler](https://pkg.go.dev/net/http#Handler) is a type that is an interface with the [ServeHTTP](https://pkg.go.dev/net/http#HandlerFunc.ServeHTTP) method.
+- [http.HandlerFunc](https://pkg.go.dev/net/http#HandlerFunc) is a function type that accepts the same args as the ServeHTTP method and also implements http.Handler
