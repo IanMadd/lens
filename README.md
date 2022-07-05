@@ -110,3 +110,7 @@ In this example, we can replace the Router type with a variable "router" with a 
 ## CH 2 Handler Conversions
 
 Things happened. Story over. Moving back to Router type.
+
+## CH 2 FAQ exercise
+
+Create an FAQ page handler
