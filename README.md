@@ -114,3 +114,14 @@ Things happened. Story over. Moving back to Router type.
 ## CH 2 FAQ exercise
 
 Create an FAQ page handler
+
+## CH 3 router requirements
+
+The [`ServeMux`](https://pkg.go.dev/net/http#ServeMux) type built into the http standard library is somewhat limited. To handle other cases, like an ID in the URL path, you need another library.
+
+This project uses [Chi](https://github.com/go-chi/chi) https://go-chi.io/#/README, which has more features.
+
+
+
+
+
