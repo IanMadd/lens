@@ -1,0 +1,9 @@
+version: '0.2'
+language: en
+dictionaries:
+  - cspell-dictionary
+dictionaryDefinitions:
+  - name: cspell-dictionary
+    path: ./cspell-dictionary.txt
+flagWords:
+  - hte
