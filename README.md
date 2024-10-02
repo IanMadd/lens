@@ -18,3 +18,7 @@ When we run `modd`, this will tell it to do two things:
 - To watch for changes to any non-test `.go` file and to build and restart our app if a change is detected.
 
 The `modd` command runs the lenslocked app. I've added `make run` to execute `modd`.
+
+## 2.2 Setting header values
+
+Set the header type in http response using `w.Header().Set("Content-Type", "text/html; charset=utf-8")`.
