@@ -22,3 +22,7 @@ The `modd` command runs the lenslocked app. I've added `make run` to execute `mo
 ## 2.2 Setting header values
 
 Set the header type in http response using `w.Header().Set("Content-Type", "text/html; charset=utf-8")`.
+
+## 2.3 Create a contact page
+
+Create a new handler func for handling requests to `"/contact"`.
