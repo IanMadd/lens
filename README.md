@@ -30,3 +30,7 @@ Create a new handler func for handling requests to `"/contact"`.
 ## 2.4
 
 Add a pathHandler function that can detect requests to different paths.
+
+## 2.5
+
+Use switch statement to handle traffic to different paths in `pathHandler` function.
