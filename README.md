@@ -26,3 +26,7 @@ Set the header type in http response using `w.Header().Set("Content-Type", "text
 ## 2.3 Create a contact page
 
 Create a new handler func for handling requests to `"/contact"`.
+
+## 2.4
+
+Add a pathHandler function that can detect requests to different paths.
