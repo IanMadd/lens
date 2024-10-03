@@ -34,3 +34,7 @@ Add a pathHandler function that can detect requests to different paths.
 ## 2.5
 
 Use switch statement to handle traffic to different paths in `pathHandler` function.
+
+## 2.7
+
+Update `pathHandler` to deal with pages not found.
