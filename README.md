@@ -38,3 +38,7 @@ Use switch statement to handle traffic to different paths in `pathHandler` funct
 ## 2.7
 
 Update `pathHandler` to deal with pages not found.
+
+## 2.8
+
+Create router type with a ServeHTTP method.
