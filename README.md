@@ -42,3 +42,7 @@ Update `pathHandler` to deal with pages not found.
 ## 2.8
 
 Create router type with a ServeHTTP method.
+
+## 2.9
+
+Convert pathHandler to the http.HandlerFunc type, which implements the Handler interface. This gives it the ServeHTTP method, which implements the Handler interface.
