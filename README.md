@@ -50,3 +50,9 @@ Convert pathHandler to the http.HandlerFunc type, which implements the Handler i
 ## 2.10
 
 Switch back to using router in http.ListenAndServe and the ServeHTTP method.
+
+## 2.11
+
+Add faq handler.
+
+
