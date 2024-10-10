@@ -55,4 +55,9 @@ Switch back to using router in http.ListenAndServe and the ServeHTTP method.
 
 Add faq handler.
 
+## 3.3
 
+Install Chi to handle routing.
+
+- [https://go-chi.io](https://go-chi.io/)
+- [https://github.com/go-chi/chi](https://github.com/go-chi/chi)
