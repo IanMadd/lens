@@ -61,3 +61,7 @@ Install Chi to handle routing.
 
 - [https://go-chi.io](https://go-chi.io/)
 - [https://github.com/go-chi/chi](https://github.com/go-chi/chi)
+
+## 3.4 Refactor with Chi
+
+Replace router struct and pathHandler function with Chi.
