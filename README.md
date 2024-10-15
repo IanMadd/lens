@@ -65,3 +65,7 @@ Install Chi to handle routing.
 ## 3.4 Refactor with Chi
 
 Replace router struct and pathHandler function with Chi.
+
+## 3.5.1 URL parameter
+
+Use `chi.URLParam` to get the URL param.

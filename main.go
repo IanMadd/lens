@@ -31,11 +31,18 @@ func faqHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, faqPageText)
 }
 
+func galleryHandler(w http.ResponseWriter, r *http.Request) {
+	galleryID := chi.URLParam(r, "gallery")
+
+	w.Write([]byte(fmt.Sprintf("Gallery ID: %v", galleryID)))
+}
+
 func main() {
 	r := chi.NewRouter()
 	r.Get("/", homeHandler)
 	r.Get("/contact", contactHandler)
 	r.Get("/faq", faqHandler)
+	r.Get("/galleries/{gallery}", galleryHandler)
 	r.NotFound(func(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Page not found", http.StatusNotFound)
 	})
