@@ -73,3 +73,7 @@ Use `chi.URLParam` to get the URL param.
 ## 3.5.2 Chi Logger
 
 middleware.Logger
+
+## 4.3
+
+Add page template with html/template.
